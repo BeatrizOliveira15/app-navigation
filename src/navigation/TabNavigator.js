@@ -1,19 +1,31 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import HomeScreen from "../screens/HomeScreen";
+import HomeStackNavigator from './StackNavigator'
 import SearchScreen from "../screens/SearchScreen";
 import ChatScreen from "../screens/ChatScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import Feather from '@expo/vector-icons/Feather';
-
+import { TouchableOpacity } from 'react-native';
+import { DrawerActions } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
-const TabNavigator = () => {
+const TabNavigator = (props) => {
+    const initialRouteName = props.route?.params?.initialRouteName ?? 'Home';
     return (
         <Tab.Navigator
-        screenOptions={({route}) => ({
+        initialRouteName={initialRouteName}
+        screenOptions={({route, navigation}) => ({
+            headerShown: false,
+            headerLeft: () => (
+                <TouchableOpacity
+                    onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+                    style={{ marginLeft: 12 }}
+                >
+                    <Feather name="menu" size={24} color="black" />
+                </TouchableOpacity>
+            ),
             tabBarIcon: ({focused, color, size}) => {
                 let iconName;
 
@@ -38,11 +50,10 @@ const TabNavigator = () => {
         })}
         >
 
-        <Tab.Screen name="Home" component={HomeScreen}/>
+        <Tab.Screen name="Home" component={HomeStackNavigator}/>
         <Tab.Screen name="Search" component={SearchScreen}/>
         <Tab.Screen name="Chat" component={ChatScreen}/> 
         <Tab.Screen name="Profile" component={ProfileScreen}/>
-
         </Tab.Navigator>
     );
 };
