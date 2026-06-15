@@ -13,7 +13,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.temas}>
-        <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Tudo</Text>
+        <Text style={{ fontWeight: 'bold', fontSize: 18, textDecorationLine: 'underline' }}>Tudo</Text>
         <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Fantasy 🐰</Text>
         <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Hairstyles ✨</Text>
         <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Flowers</Text>
@@ -43,20 +43,19 @@ const styles = StyleSheet.create({
   },
   Card: {
     flex: 1,
-    margin: 4,
-    padding: 15,
-    backgroundColor: '#FFC0CB',
+    padding: 5,
+    backgroundColor: '#FFFFFF',
     borderRadius: 20,
     shadowOpacity: 0.1,
     alignItems: 'center'
   },
   image: {
     flex: 1,
-    width: 120,
-    height: 120,
-    resizeMode: 'contain',
+    width: 170,
+    height: 250,
+    resizeMode: 'cover',
     marginBottom: 10,
-    
+    borderRadius: 20,
   },
   // productName: {
   //   fontSize: 14,
@@ -66,9 +65,10 @@ const styles = StyleSheet.create({
   // },
   pinDescription: {
     flex: 1,
-    fontSize: 12,
+    fontSize: 20,
     fontWeight: 'bold',
-    
+    marginLeft: 150,
+    marginTop: -15
   },
 });
 

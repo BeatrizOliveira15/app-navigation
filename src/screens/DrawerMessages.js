@@ -12,11 +12,4 @@ const DrawerMessages = ({ navigation }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-  title: { fontSize: 20, marginBottom: 16 },
-  button: { backgroundColor: '#3483FA', padding: 12, borderRadius: 6 },
-  buttonText: { color: '#fff', fontWeight: 'bold' },
-});
-
 export default DrawerMessages;
