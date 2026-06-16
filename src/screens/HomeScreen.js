@@ -13,10 +13,10 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.temas}>
-        <Text style={{ fontWeight: 'bold', fontSize: 18, textDecorationLine: 'underline' }}>Tudo</Text>
-        <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Fantasy 🐰</Text>
-        <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Hairstyles ✨</Text>
-        <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Flowers</Text>
+        <Text style={{ fontWeight: 'bold', fontSize: 17, textDecorationLine: 'underline' }}>Tudo</Text>
+        <Text style={{ fontWeight: 'bold', fontSize: 17 }}>Fantasy 🐰</Text>
+        <Text style={{ fontWeight: 'bold', fontSize: 17 }}>Hairstyles ✨</Text>
+        <Text style={{ fontWeight: 'bold', fontSize: 17 }}>Flowers</Text>
       </View>
       <FlatList
         data={pins}
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: 170,
     height: 250,
-    resizeMode: 'cover',
     marginBottom: 10,
     borderRadius: 20,
   },
