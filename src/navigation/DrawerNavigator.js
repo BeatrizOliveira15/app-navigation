@@ -15,8 +15,6 @@ const CustomDrawerContent = (props) => {
     <DrawerContentScrollView {...props} contentContainerStyle={{
       flex: 1, 
       backgroundColor: '#FFC0CB',
-      width: 190,
-      borderRadius: 20,
       }}>
       <View style={styles.header}>
         <View style={styles.user}>
@@ -24,10 +22,10 @@ const CustomDrawerContent = (props) => {
         </View>
         <Text style={styles.title}>Beatriz</Text>
       </View>
-      <DrawerItem label="Início" icon={({ color, size }) => <Feather name="home" size={24} color={color} />} onPress={() => { navigation.navigate('Main', { screen: 'TabsScreen', params: { screen: 'Home' } }); navigation.closeDrawer(); }}/>
-      <DrawerItem label="Pesquisar" icon={({ color, size }) => <Feather name="search" size={24} color={color} />} onPress={() => { navigation.navigate('Main', { screen: 'TabsScreen', params: { screen: 'Search' } }); navigation.closeDrawer(); }}/>
-      <DrawerItem label="Mensagens" icon={({ color, size }) => <Ionicons name="chatbubble-ellipses-outline" size={24} color={color} />} onPress={() => { navigation.navigate('Main', { screen: 'TabsScreen', params: { screen: 'Chat' } }); navigation.closeDrawer(); }}/>
-      <DrawerItem label="Perfil" icon={({ color, size }) => <Ionicons name="person-outline" size={24} color={color} />} onPress={() => { navigation.navigate('Main', { screen: 'TabsScreen', params: { screen: 'Profile' } }); navigation.closeDrawer(); }}/>
+        <DrawerItem label="Início" labelStyle={styles.drawerLabel} icon={({ color, size }) => <Feather name="home" size={35} color="black" />} onPress={() => { navigation.navigate('Main', { screen: 'TabsScreen', params: { screen: 'Home' } }); navigation.closeDrawer(); }}/>
+        <DrawerItem label="Pesquisar" labelStyle={styles.drawerLabel} icon={({ color, size }) => <Feather name="search" size={35} color="black" />} onPress={() => { navigation.navigate('Main', { screen: 'TabsScreen', params: { screen: 'Search' } }); navigation.closeDrawer(); }}/> 
+        <DrawerItem label="Mensagens" labelStyle={styles.drawerLabel} icon={({ color, size }) => <Ionicons name="chatbubble-ellipses-outline" size={35} color="black" />} onPress={() => { navigation.navigate('Main', { screen: 'TabsScreen', params: { screen: 'Chat' } }); navigation.closeDrawer(); }}/>
+        <DrawerItem label="Perfil" labelStyle={styles.drawerLabel} icon={({ color, size }) => <Ionicons name="person-outline" size={35} color="black" />} onPress={() => { navigation.navigate('Main', { screen: 'TabsScreen', params: { screen: 'Profile' } }); navigation.closeDrawer(); }}/>
 </DrawerContentScrollView>
   );
 }
@@ -66,7 +64,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     marginTop: -90,
     borderRadius: 100,
-    marginLeft: -5
+    marginLeft: 100
   },
   letter: {
     fontSize: 30,
@@ -75,7 +73,13 @@ const styles = StyleSheet.create({
     marginLeft: 30
   },
   title: {
-    fontSize: 22,
+    fontSize: 25,
+    fontWeight: 'bold',
+    marginLeft: 100
+  },
+  drawerLabel: {
+    color: 'black',
+    fontSize: 20,
     fontWeight: 'bold'
   }
 });

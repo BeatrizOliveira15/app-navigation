@@ -56,12 +56,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderRadius: 20,
   },
-  // productName: {
-  //   fontSize: 14,
-  //   color: '#333333',
-  //   textAlign: 'center',
-  //   marginBottom: 8,
-  // },
   pinDescription: {
     flex: 1,
     fontSize: 20,
